@@ -30,6 +30,7 @@
         border: 2px solid @white;
         border-radius: 50%;
         margin-right: 10px;
+        transition-duration: 0.5s;
 
         &--active {
             display: inline-block;
@@ -73,6 +74,23 @@
 
 
     &__item {
+        /*display: block;
+        transition-duration: 2s;
+        transform: scaleX(1.5);*/
+        /*transition: all 5s ease-in-out;*/
+        animation-name: fade;
+        animation-duration: 1.5s;
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+
         @media @phone {
             min-height: 390px;
         }
