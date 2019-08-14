@@ -42,23 +42,27 @@
         }
         
         &--one {
-            background: url("../img/picture1.jpg") no-repeat center center;
+            background-repeat: no-repeat;
+            background-position: center center;
             background-size: cover;
         }
 
         &--two {
-            background: url("../img/picture2.jpg") no-repeat center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         &--three {
-            background: url("../img/picture3.jpg") no-repeat center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         &--small-one {
-            background: url("../img/local-plants.jpg") no-repeat center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
             .size(100%; 267px);
 
             @media @phone {
@@ -68,8 +72,9 @@
         }
 
         &--small-two {
-            background: url("../img/road.jpg") no-repeat center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
             .size(100%; 267px);
 
             @media @phone {
@@ -78,8 +83,9 @@
         }
 
         &--small-three {
-            background: url("../img/devil-bridge.jpg") no-repeat center center;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
             .size(100%; 267px);
 
             @media @phone {
@@ -161,6 +167,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 
     &__svg {
@@ -172,11 +182,9 @@
         }
 
         
-        /*&:hover {
+        &:hover {
             pointer-events: none;
-            fill: green;
-            transform: scale(1.2);
-        } */
+        }
     }
 
     &__counter {
