@@ -24,21 +24,28 @@ function showSlide(n) {
         slideIndex = n;
     }
     
-    /*for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }*/
-  
+    /*
+    this is needed code
     slides.forEach(function(item) {
         item.style.display = "none"; 
     });
 
-    slides[slideIndex].style.display = "block"; 
+    slides[slideIndex].style.display = "block"; */
+
+    slides.forEach(function(item, i) {
+        if (i != n) {
+            slides[i].classList.add('slider__item--inactive');
+        }
+        else {
+            slides[i].classList.remove('slider__item--inactive');
+        }
+    });
 }
 
 
 
 backButton.addEventListener('click', function() {
-    if (slideIndex > 0) {
+    if (slideIndex) {
         slideIndex -= 1;
         dots[slideIndex+1].classList.remove('slider__dot--active');
     }
@@ -64,10 +71,6 @@ forwardButton.addEventListener('click', function() {
 });
 
 
- /*for(var i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", dotClickhandler(i));
- }*/
-
  dots.forEach(function(item, i) {
     item.addEventListener("click", dotClickhandler(i));
 });
@@ -77,11 +80,6 @@ forwardButton.addEventListener('click', function() {
     return function() {
         showSlide(i);
         dots[i].classList.add('slider__dot--active');
-        /*for (n = 0; n < dots.length; n++) {
-            if ((n != i) && (dots[n].classList.contains('slider__dot--active'))) {
-                dots[n].classList.remove('slider__dot--active');
-            }
-        }*/
 
         dots.forEach(function(item, j) {
             if ((i != j) && (item.classList.contains('slider__dot--active'))) {
